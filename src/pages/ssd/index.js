@@ -4,10 +4,13 @@ import Image from "next/image";
 import {ShoppingCartOutlined, AppstoreAddOutlined} from '@ant-design/icons';
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { useDispatch } from "react-redux";
+import { addProduct } from "@/redux/features/product/productSlice";
 
 const RamPage = ({ products }) => {
   const [hasBuild, setHasBuild] = useState(false);
   const router = useRouter();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (router.query = 'getProduct') {
@@ -16,7 +19,7 @@ const RamPage = ({ products }) => {
   }, [])
 
   const handleBackToPcBuild = () =>{
-    router.push('tool/pc-builder')
+    router.push('/tool/pc-builder')
   }
   return (
     <Row gutter={8}>

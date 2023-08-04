@@ -4,16 +4,25 @@ import Image from "next/image";
 import {ShoppingCartOutlined, AppstoreAddOutlined} from '@ant-design/icons';
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { useDispatch } from "react-redux";
+import { addProduct } from "@/redux/features/product/productSlice";
 
 const PowerSupplyPage = ({ products }) => {
   const [hasBuild, setHasBuild] = useState(false);
   const router = useRouter();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (router.query = 'getProduct') {
       setHasBuild(true)
     }
   }, [])
+
+  const handleBackToPcBuild = (product) =>{
+    dispatch(addProduct(product))
+    router.push('/tool/pc-builder')
+  }
+  
   return (
     <Row gutter={8}>
       {products?.data?.map((data) => (
@@ -38,7 +47,7 @@ const PowerSupplyPage = ({ products }) => {
               <h4 className="text-yellow-500 text-2xl text-center">{data.price} $</h4>
             </div>
             {
-              hasBuild ? <Button className='bg-blue-700 flex items-center justify-center mt-5' style={{ width: "100%" }} type="primary" icon={<AppstoreAddOutlined />} onClick={handleBackToPcBuild}>Add</Button> :
+              hasBuild ? <Button className='bg-blue-700 flex items-center justify-center mt-5' style={{ width: "100%" }} type="primary" icon={<AppstoreAddOutlined />} onClick={() => handleBackToPcBuild(data)}>Add</Button> :
 
                 <Button className='bg-blue-700 flex items-center justify-center mt-5' style={{ width: "100%" }} type="primary" icon={<ShoppingCartOutlined />}>Add to Cart</Button>
             }
