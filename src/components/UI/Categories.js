@@ -9,52 +9,36 @@ import RamImage from '@/assets/categories/ram.jpg';
 import SSDImage from '@/assets/categories/ssd.jpg';
 
 
-const style = {
-    width: 220,
-    marginTop: "10px",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-
-};
-
 const Categories = () => (
-    <Row justify="center" className='flex justify-center items-center'
-        gutter={{
-            xs: 8,
-            sm: 16,
-            md: 24,
-            lg: 32,
-        }}
-    >
-        <Col xs={24} md={8} xl={8}>
-            <Card hoverable style={style} >
-                <Image height={200} width={100} alt="example" src={MotherBoardImage} />
+    <Row justify="center" className='flex justify-center items-center my-10' gutter={10}>
+        <Col md={8} className='max-h-50 my-2'>
+            <Card hoverable>
+                <Image height={400} width={400} className='p-0' alt="example" src={MotherBoardImage} />
             </Card>
         </Col>
-        <Col xs={24} md={8} xl={8}>
-            <Card hoverable style={style} >
-                <Image height={200} width={100} alt="example" src={CPUImage} />
+        <Col md={8} className='max-h-50 my-2'>
+            <Card hoverable>
+                <Image height={400} width={400} className='p-0' alt="example" src={CPUImage} />
             </Card>
         </Col>
-        <Col xs={24} md={8} xl={8}>
-            <Card hoverable style={style} >
-                <Image height={200} width={100} alt="example" src={MonitorImage} />
+        <Col md={8} className='max-h-50 my-2'>
+            <Card hoverable>
+                <Image height={400} width={400} className='p-0' alt="example" src={MonitorImage} />
             </Card>
         </Col>
-        <Col xs={24} md={8} xl={8}>
-            <Card hoverable style={style} >
-                <Image height={200} width={100} alt="example" src={SSDImage} />
+        <Col md={8} className='max-h-50 my-2'>
+            <Card hoverable>
+                <Image height={400} width={400} className='p-0' alt="example" src={SSDImage} />
             </Card>
         </Col>
-        <Col xs={24} md={8} xl={8}>
-            <Card hoverable style={style} >
-                <Image height={200} width={100} alt="example" src={RamImage} />
+        <Col md={8} className='max-h-50 my-2'>
+            <Card hoverable>
+                <Image height={400} width={400} className='p-0' alt="example" src={RamImage} />
             </Card>
         </Col>
-        <Col xs={24} md={8} xl={8}>
-            <Card hoverable style={style} >
-                <Image height={200} width={100} alt="example" src={PowerSupplyImage} />
+        <Col md={8} className='max-h-50 my-2'>
+            <Card hoverable>
+                <Image height={400} width={400} className='p-0' alt="example" src={PowerSupplyImage} />
             </Card>
         </Col>
     </Row>

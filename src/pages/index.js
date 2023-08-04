@@ -7,16 +7,16 @@ import { Row } from 'antd';
 const HomePage = ({ products }) => {
     return (
         <div className='my-10'>
-            <h3 className='bg-gray-600 text-yellow-400 p-2'>Products</h3>
-            <div className='flex justify-center items-center mx-auto'>
+            <h3 className='bg-gray-600 text-yellow-400 p-2 text-center'>Products</h3>
+            <div className='flex justify-center items-center mx-10'>
                 <Row justify="center" className='flex justify-center items-center my-10' gutter={10}>
                     {
                         products?.map((data, id) => <ProductCard data={data} key={id + 10}/>)
                     }
                 </Row>
             </div>
-            <h3 className='bg-gray-600 text-yellow-400 p-2'>Categories</h3>
-            <div className='flex justify-center items-center mx-auto'>
+            <h3 className='bg-gray-600 text-yellow-400 p-2 text-center'>Categories</h3>
+            <div className='flex justify-center items-center mx-10'>
                 <Categories />
             </div>
         </div>
