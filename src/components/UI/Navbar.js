@@ -36,13 +36,12 @@ const Navbar = () => {
                                 className="logo"
                                 style={{ color: "white", paddingLeft: "20px" }}
                             >
-                                <div className='flex'>
-                                    <Link href="/">
+                                <Link href="/">
+                                    <div className='flex'>
                                         <Image height={40} width={40} src={Logo} className='rounded mr-5' />
                                         <h1 className='text-2xl font-bold text-white'>BD PC BUILDER</h1>
-                                    </Link>
-                                </div>
-
+                                    </div>
+                                </Link>
                             </div>
                         </Col>
                         <Col xs={0} sm={0} md={10}>
