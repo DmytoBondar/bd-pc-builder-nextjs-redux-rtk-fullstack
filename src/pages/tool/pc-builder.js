@@ -9,42 +9,57 @@ import MotherBoardImage from '../../assets/categories/motherboard.webp';
 import PowerSupplyImage from '../../assets/categories/power-supply.png';
 import RamImage from '../../assets/categories/ram.jpg';
 import SSDImage from '../../assets/categories/ssd.jpg';
-
-import {
-    ShoppingCartOutlined, SaveOutlined, DollarOutlined
-} from '@ant-design/icons';
+import { useRouter } from 'next/router';
+import {ShoppingCartOutlined, SaveOutlined, DollarOutlined} from '@ant-design/icons';
 
 const buildOptions = [
     {
         name: "CPU / Processor",
-        image: CPUImage
+        image: CPUImage,
+        path: '/processor/amd'
     },
     {
         name: "Motherboard",
-        image: MotherBoardImage
+        image: MotherBoardImage,
+        path: '/motherboard'
     },
     {
         name: "RAM",
-        image: RamImage
+        image: RamImage,
+        path: '/ram'
     },
     {
         name: "Power Supply Unit",
-        image: PowerSupplyImage
+        image: PowerSupplyImage,
+        path: '/power-supply'
+
     },
     {
         name: "Storage Device",
-        image: SSDImage
+        image: SSDImage,
+        path: '/ssd'
     },
     {
         name: "Monitor",
-        image: MonitorImage
+        image: MonitorImage,
+        path: '/monitor'
     },
     {
         name: "Others",
-        image: keyboardImage
+        image: keyboardImage,
+        path: '/others'
     }
 ]
 const PcBuilder = () => {
+    const router = useRouter();
+    const handleClick =(link) =>{
+        router.push({
+            pathname: link,
+            query: {
+                build:"getProduct"
+            }
+        })
+    }
     return (
         <Card style={{ width: "80%" }} className='mx-auto my-5 mb-40'>
             <div className='flex justify-between'>
@@ -77,12 +92,11 @@ const PcBuilder = () => {
                                     <hr class="h-5 w-96 mt-2 bg-gray-200 dark:bg-gray-500" />
                                 </div>
                             </div>
-                            <Button className='bg-blue-700 items-center flex' type="primary" size="large">Choose</Button>
+                            <Button className='bg-blue-700 items-center flex' type="primary" size="large" onClick={() =>handleClick(data.path)}>Choose</Button>
                         </div>
                     </Card>
                 ))
             }
-
         </Card>
     )
 }

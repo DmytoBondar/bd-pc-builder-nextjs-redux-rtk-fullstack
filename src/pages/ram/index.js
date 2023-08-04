@@ -1,12 +1,25 @@
 import ProductLayout from "@/components/Layout/ProductLayout";
 import { Button, Card, Col, Row } from "antd";
-import processImage from '@/assets/categories/processor.webp'
 import Image from "next/image";
-import {
-  ShoppingCartOutlined
-} from '@ant-design/icons';
+import { ShoppingCartOutlined, AppstoreAddOutlined } from '@ant-design/icons';
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
 const RamPage = ({ products }) => {
+  const [hasBuild, setHasBuild] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    if (router.query = 'getProduct') {
+      setHasBuild(true)
+    }
+  }, [])
+
+  const handleBackToPcBuild = () =>{
+    router.push('tool/pc-builder')
+  }
+
+
   return (
     <Row gutter={8}>
       {products?.data?.map((data) => (
@@ -30,7 +43,11 @@ const RamPage = ({ products }) => {
             <div>
               <h4 className="text-yellow-500 text-2xl text-center">{data.price} $</h4>
             </div>
-            <Button className='bg-blue-700 flex items-center justify-center mt-5' style={{ width: "100%" }} type="primary" icon={<ShoppingCartOutlined />}>Add to Cart</Button>
+            {
+              hasBuild ? <Button className='bg-blue-700 flex items-center justify-center mt-5' style={{ width: "100%" }} type="primary" icon={<AppstoreAddOutlined />} onClick={handleBackToPcBuild}>Add</Button> :
+
+                <Button className='bg-blue-700 flex items-center justify-center mt-5' style={{ width: "100%" }} type="primary" icon={<ShoppingCartOutlined />}>Add to Cart</Button>
+            }
           </Card>
         </Col>
       ))}

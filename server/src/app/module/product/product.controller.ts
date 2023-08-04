@@ -38,7 +38,6 @@ const getSingleProduct = catchAsync(async (req: Request, res: Response) => {
 
 const getAllProduct = catchAsync(async (req: Request, res: Response) => {
     const result = await ProductService.getAllProducts();
-    console.log("hellow world")
     sendReponse(res, {
         statusCode: 200,
         message: "Successfully retrieve all Product information !!",
