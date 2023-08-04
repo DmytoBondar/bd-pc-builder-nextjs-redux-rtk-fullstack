@@ -37,8 +37,10 @@ const Navbar = () => {
                                 style={{ color: "white", paddingLeft: "20px" }}
                             >
                                 <div className='flex'>
-                                <Image height={40} width={40} src={Logo} className='rounded mr-5' />
-                                <h1 className='text-2xl font-bold text-white'>BD PC BUILDER</h1>
+                                    <Link href="/">
+                                        <Image height={40} width={40} src={Logo} className='rounded mr-5' />
+                                        <h1 className='text-2xl font-bold text-white'>BD PC BUILDER</h1>
+                                    </Link>
                                 </div>
 
                             </div>
@@ -61,7 +63,7 @@ const Navbar = () => {
                                     </Link>
                                 </Menu.Item>
                                 <Menu.Item key="4">
-                                    <Button type="primary" className='bg-red-700 text-white'href="/tool/pc-builder">
+                                    <Button type="primary" className='bg-red-700 text-white' href="/tool/pc-builder">
                                         PC BUILDER
                                     </Button>
                                 </Menu.Item>
@@ -106,48 +108,48 @@ const Navbar = () => {
             <Menu mode="horizontal" className='bg-sky-900 text-white'>
                 <SubMenu title="CPU / Processor">
                     <Menu.ItemGroup style={customStyle}>
-                        <Menu.Item key="setting:1">AMD</Menu.Item>
-                        <Menu.Item key="setting:2">Intel</Menu.Item>
+                        <Link href="processor/amd">
+                            <Menu.Item key="Amd">AMD</Menu.Item>
+                        </Link>
+                        <Link href="processor/amd">
+                            <Menu.Item key="Amd">Intel</Menu.Item>
+                        </Link>
                     </Menu.ItemGroup>
-                </SubMenu>
-                <SubMenu title="Mother Board">
-                    <Menu.ItemGroup title="Intel core" style={customStyle}>
-                        <Menu.Item key="setting:1">Intel core</Menu.Item>
-                        <Menu.Item key="setting:2">Octa</Menu.Item>
-                    </Menu.ItemGroup>
-                    {/* <Menu.ItemGroup title="Item 2" style={customStyle}>
-                        <Menu.Item key="setting:3">Snap Dragon 3</Menu.Item>
-                        <Menu.Item key="setting:4">Option 4</Menu.Item>
-                    </Menu.ItemGroup> */}
                 </SubMenu>
                 <SubMenu title="RAM">
-                    <Menu.ItemGroup title="Intel core" style={customStyle}>
-                        <Menu.Item key="setting:1">Intel core</Menu.Item>
-                        <Menu.Item key="setting:2">Octa</Menu.Item>
+                    <Menu.ItemGroup style={customStyle}>
+                        <Link href="/ram">
+                            <Menu.Item key="Amd">RAM</Menu.Item>
+                        </Link>
                     </Menu.ItemGroup>
                 </SubMenu>
-                <SubMenu title="Power Supply Unit">
-                    <Menu.ItemGroup title="Intel core" style={customStyle}>
-                        <Menu.Item key="setting:1">Intel core</Menu.Item>
-                        <Menu.Item key="setting:2">Octa</Menu.Item>
+
+                <SubMenu title="MOTHERBOARD">
+                    <Menu.ItemGroup style={customStyle}>
+                        <Link href="/motherboard">
+                            <Menu.Item key="Amd">MOTHERBOARD</Menu.Item>
+                        </Link>
                     </Menu.ItemGroup>
                 </SubMenu>
-                <SubMenu title="Storage">
-                    <Menu.ItemGroup title="Intel core" style={customStyle}>
-                        <Menu.Item key="setting:1">Intel core</Menu.Item>
-                        <Menu.Item key="setting:2">Octa</Menu.Item>
+                <SubMenu title="Power Supply">
+                    <Menu.ItemGroup style={customStyle}>
+                        <Link href="/power-supply">
+                            <Menu.Item key="Amd">Power Supply</Menu.Item>
+                        </Link>
                     </Menu.ItemGroup>
                 </SubMenu>
-                <SubMenu title="Monitor">
-                    <Menu.ItemGroup title="Intel core" style={customStyle}>
-                        <Menu.Item key="setting:1">Intel core</Menu.Item>
-                        <Menu.Item key="setting:2">Octa</Menu.Item>
+                <SubMenu title="MONITOR">
+                    <Menu.ItemGroup style={customStyle}>
+                        <Link href="/monitor">
+                            <Menu.Item key="Amd">MONITOR</Menu.Item>
+                        </Link>
                     </Menu.ItemGroup>
                 </SubMenu>
-                <SubMenu title="Others">
-                    <Menu.ItemGroup title="Intel core" style={customStyle}>
-                        <Menu.Item key="setting:1">Intel core</Menu.Item>
-                        <Menu.Item key="setting:2">Octa</Menu.Item>
+                <SubMenu title="OTHERS">
+                    <Menu.ItemGroup style={customStyle}>
+                        <Link href="/others">
+                            <Menu.Item key="Amd">OTHERS</Menu.Item>
+                        </Link>
                     </Menu.ItemGroup>
                 </SubMenu>
             </Menu>

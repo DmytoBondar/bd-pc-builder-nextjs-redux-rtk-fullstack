@@ -1,55 +1,42 @@
-import { Card } from 'antd';
-const { Meta } = Card;
-import { Col, Divider, Row } from 'antd';
+import { Button, Card } from 'antd';
+import { Col } from 'antd';
+import {
+    ShoppingCartOutlined
+  } from '@ant-design/icons';
+import Image from 'next/image';
 const style = {
     width: "300px",
-    // height:"200px",
     marginTop: "10px",
-    padding:"10px",
-    display:"flex",
-    justifyContent:"center"
+    padding: "10px",
+    display: "flex",
+    justifyContent: "center"
 };
 
-const ProductCard = () => (
-    <Row justify="center" className='flex justify-center items-center'
-        // gutter={{
-        //     xs: 8,
-        //     sm: 16,
-        //     md: 24,
-        //     lg: 32,
-        // }}
-    >
-        <Col md={8}>
-            <Card hoverable style={style} cover={
-                <img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
-            }>
-            </Card>
-        </Col>
-        <Col md={8}>
-            <Card hoverable style={style} cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}>
-            </Card>
-        </Col>
-        <Col md={8}>
-            <Card hoverable style={style} cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}>
-            </Card>
-        </Col>
-
-        <Col md={8}>
-            <Card hoverable style={style} cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}>
-            </Card>
-        </Col>
-
-        <Col md={8}>
-            <Card hoverable style={style} cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}>
-            </Card>
-        </Col>
-
-        <Col md={8}>
-            <Card hoverable style={style} cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}>
-            </Card>
-        </Col>
-    </Row>
-
-);
-
-export default ProductCard;
+const productCard = ({ data }) => {
+    return (
+        <Col md={8} className="mb-2">
+        <Card hoverable cover={
+          <>
+            <Image height={300} width={200} alt="processor" src={data.image} />
+            
+          </>
+        }>
+          <h1 className="my-2 p-1 font-bold text-base leading-5">
+              {data.title}
+            </h1>
+            <ul className="px-5">
+              <li>Base Clock Speed 3.2GHz</li>
+              <li>Package AM4</li>
+              <li>PCI Express PCIe 3.0</li>
+              <li>Rating {data.rating}</li>
+            </ul>
+            <hr className="my-2"/>
+            <div>
+              <h4 className="text-yellow-500 text-2xl text-center">{data.price} $</h4>
+            </div>
+            <Button className='bg-blue-700 flex items-center justify-center mt-5' style={{width:"100%"}} type="primary" icon={<ShoppingCartOutlined />}>Add to Cart</Button>
+        </Card>
+      </Col>
+    )
+}
+export default productCard;

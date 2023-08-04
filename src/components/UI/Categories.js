@@ -1,6 +1,14 @@
 import { Card } from 'antd';
-const { Meta } = Card;
-import { Col, Divider, Row } from 'antd';
+import { Col, Row } from 'antd';
+import Image from 'next/image';
+import CPUImage from "@/assets/categories/processor.webp";
+import MonitorImage from '@/assets/categories/monitor.webp';
+import MotherBoardImage from '@/assets/categories/motherboard.webp';
+import PowerSupplyImage from '@/assets/categories/power-supply.png';
+import RamImage from '@/assets/categories/ram.jpg';
+import SSDImage from '@/assets/categories/ssd.jpg';
+
+
 const style = {
     width: 220,
     marginTop: "10px",
@@ -20,32 +28,33 @@ const Categories = () => (
         }}
     >
         <Col xs={24} md={8} xl={8}>
-            <Card hoverable style={style} cover={
-                <img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
-            }>
+            <Card hoverable style={style} >
+                <Image height={200} width={100} alt="example" src={MotherBoardImage} />
             </Card>
         </Col>
         <Col xs={24} md={8} xl={8}>
-            <Card hoverable style={style} cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}>
+            <Card hoverable style={style} >
+                <Image height={200} width={100} alt="example" src={CPUImage} />
             </Card>
         </Col>
         <Col xs={24} md={8} xl={8}>
-            <Card hoverable style={style} cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}>
+            <Card hoverable style={style} >
+                <Image height={200} width={100} alt="example" src={MonitorImage} />
             </Card>
         </Col>
-
         <Col xs={24} md={8} xl={8}>
-            <Card hoverable style={style} cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}>
+            <Card hoverable style={style} >
+                <Image height={200} width={100} alt="example" src={SSDImage} />
             </Card>
         </Col>
-
         <Col xs={24} md={8} xl={8}>
-            <Card hoverable style={style} cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}>
+            <Card hoverable style={style} >
+                <Image height={200} width={100} alt="example" src={RamImage} />
             </Card>
         </Col>
-
         <Col xs={24} md={8} xl={8}>
-            <Card hoverable style={style} cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}>
+            <Card hoverable style={style} >
+                <Image height={200} width={100} alt="example" src={PowerSupplyImage} />
             </Card>
         </Col>
     </Row>

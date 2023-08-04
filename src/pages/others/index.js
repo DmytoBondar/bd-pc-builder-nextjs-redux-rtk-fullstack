@@ -6,14 +6,14 @@ import {
   ShoppingCartOutlined
 } from '@ant-design/icons';
 
-const AMDProcessor = ({ products }) => {
+const OthersPage = ({ products }) => {
   return (
     <Row gutter={8}>
       {products?.data?.map((data) => (
         <Col md={8} className="mb-2">
           <Card hoverable cover={
             <>
-              <Image height={300} width={200} alt="processor" src={data.image} className="max-h-48" />
+              <Image height={300} width={200} alt="others" src={data.image} className="max-h-48" />
             </>
           }>
             <h1 className="my-2 p-1 font-bold text-base leading-5">
@@ -38,9 +38,9 @@ const AMDProcessor = ({ products }) => {
   )
 }
 
-export default AMDProcessor;
+export default OthersPage;
 
-AMDProcessor.getLayout = function getLayout(page) {
+OthersPage.getLayout = function getLayout(page) {
   return (
     <ProductLayout>
       {page}
@@ -49,7 +49,7 @@ AMDProcessor.getLayout = function getLayout(page) {
 }
 
 export const getStaticProps = async () => {
-  const res = await fetch(process.env.BASE_URL + '/products/cat?category=processor');
+  const res = await fetch(process.env.BASE_URL + '/products/cat?category=others');
   const data = await res.json();
   return {
     props: {

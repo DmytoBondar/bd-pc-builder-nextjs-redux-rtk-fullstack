@@ -6,7 +6,7 @@ import {
   ShoppingCartOutlined
 } from '@ant-design/icons';
 
-const AMDProcessor = ({ products }) => {
+const MotherBoardPage = ({ products }) => {
   return (
     <Row gutter={8}>
       {products?.data?.map((data) => (
@@ -38,9 +38,9 @@ const AMDProcessor = ({ products }) => {
   )
 }
 
-export default AMDProcessor;
+export default MotherBoardPage;
 
-AMDProcessor.getLayout = function getLayout(page) {
+MotherBoardPage.getLayout = function getLayout(page) {
   return (
     <ProductLayout>
       {page}
@@ -49,7 +49,7 @@ AMDProcessor.getLayout = function getLayout(page) {
 }
 
 export const getStaticProps = async () => {
-  const res = await fetch(process.env.BASE_URL + '/products/cat?category=processor');
+  const res = await fetch(process.env.BASE_URL + '/products/cat?category=motherboard');
   const data = await res.json();
   return {
     props: {
