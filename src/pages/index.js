@@ -11,7 +11,7 @@ const HomePage = ({ products }) => {
             <div className='flex justify-center items-center mx-10'>
                 <Row justify="center" className='flex justify-center items-center my-10' gutter={10}>
                     {
-                        products?.map((data, id) => <ProductCard data={data} key={id + 10}/>)
+                        products?.map((data, id) => <ProductCard data={data} key={id + 10} />)
                     }
                 </Row>
             </div>
@@ -33,11 +33,10 @@ HomePage.getLayout = function getLayout(page) {
     )
 }
 export const getServerSideProps = async () => {
-    const res = await fetch('http://localhost:5000/api/v1/products');
-
+    const res = await fetch(process.env.BASE_URL + '/products');
     const data = await res.json();
     const shuffleProducts = shuffleArray(data.data);
-    const randomProducts = shuffleProducts.slice(0,6);
+    const randomProducts = shuffleProducts.slice(0, 6);
     return {
         props: {
             products: randomProducts
