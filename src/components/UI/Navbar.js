@@ -67,7 +67,10 @@ const Navbar = () => {
                                     </Button>
                                 </Menu.Item>
                                 <Menu.Item key="5">
-                                    <Button className='bg-blue-700 border-0 oultine-0 text-white'>Sign up</Button>
+                                    <Link href={'/login'}>
+                                        <Button className='bg-blue-700 border-0 oultine-0 text-white'>Login</Button>
+                                    </Link>
+                                    {/* <Button className='bg-blue-700 border-0 oultine-0 text-white'>Sign Out</Button> */}
                                 </Menu.Item>
                             </Menu>
                         </Col>
@@ -95,10 +98,8 @@ const Navbar = () => {
                                 Settings
                             </Menu.Item>
                             <Menu.Item key="4">
-                                <Button type="primary" style={{ marginRight: "10px" }}>
-                                    Sign in
-                                </Button>
-                                <Button>Sign up</Button>
+                                {/* <Button type="primary" style={{ marginRight: "10px" }}>Sign in</Button> */}
+                                {/* <Button>Sign up</Button> */}
                             </Menu.Item>
                         </Menu>
                     </Drawer>
